@@ -13,7 +13,13 @@ float4 main(VSOutput input) : SV_TARGET
 	//float4 texcolor = tex.Sample(smp, input.uv);
 	//return float4(texcolor.rgb * shade_color, texcolor.a * m_alpha);
 
+	//float4 texcolor = tex.Sample(smp, input.uv);
+	//return float4(1, 1, 1, 1);
 	float4 texcolor = tex.Sample(smp, input.uv);
-	return float4(1, 1, 1, 1);
+	return input.color * texcolor;
+
+
 
 }
+
+
